@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "T9j399Juf5XFMxuTJ4XBrTFBblo4hu8xzDMT+m1Al+ittPjQMznFG7qAfXCgTXLGkg70UXLmhncb4BccUXoUXg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\guillermo.rodriguez\\source\\repos\\BancardService\\Bancard.Main\\Bancard.Main.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\guillermo.rodriguez\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

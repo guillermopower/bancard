@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34009.444
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bancard.API", "BancardService\Bancard.API.csproj", "{D0023C56-EE40-4BBF-9ECE-70E4F0B540CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bancard.Main", "Bancard.Main\Bancard.Main.csproj", "{EDEB3D42-9CAB-4518-B3B9-CE313DDB0E92}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D0023C56-EE40-4BBF-9ECE-70E4F0B540CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0023C56-EE40-4BBF-9ECE-70E4F0B540CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0023C56-EE40-4BBF-9ECE-70E4F0B540CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0023C56-EE40-4BBF-9ECE-70E4F0B540CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDEB3D42-9CAB-4518-B3B9-CE313DDB0E92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDEB3D42-9CAB-4518-B3B9-CE313DDB0E92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDEB3D42-9CAB-4518-B3B9-CE313DDB0E92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDEB3D42-9CAB-4518-B3B9-CE313DDB0E92}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BBAB4C97-60CC-49F2-A4DB-E45492AEB724}
+	EndGlobalSection
+EndGlobal

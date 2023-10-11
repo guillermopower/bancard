@@ -1,6 +1,6 @@
 ﻿namespace Bancard.API.Models
 {
-    public class CreditCardDeleteModel
+    public class CreditCardDeleteModel:OperationModel
     {
         public string alias_token { get; set; }
     }

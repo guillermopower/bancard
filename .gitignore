@@ -16,3 +16,8 @@ BancardService/obj/Debug/net7.0/Bancard.API.dll
 BancardService/obj/Debug/net7.0/Bancard.API.pdb
 BancardService/obj/Debug/net7.0/ref/Bancard.API.dll
 BancardService/obj/Debug/net7.0/refint/Bancard.API.dll
+/Bancard.API/bin/Debug/net7.0
+/Bancard.API/obj
+/Bancard.Console/bin/Debug/net7.0
+/Bancard.Console/obj
+/BancardService/bin/Debug/net7.0

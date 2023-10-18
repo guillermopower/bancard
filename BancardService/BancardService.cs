@@ -1,12 +1,11 @@
-﻿
-using Bancard.API.Models;
+﻿using Bancard.Core.Models;
 using Newtonsoft.Json;
 using System.Net;
 using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using System.Text;
 
-namespace Bancard.API
+namespace Bancard.Core
 {
     public class BancardService
     {
@@ -35,7 +34,6 @@ namespace Bancard.API
 
             return rta;
         }
-       
         public async Task<string> SingleBuyConfirmation(int shop_process_id)
         {
             string strToHash = privateKey + shop_process_id + "get_confirmation";

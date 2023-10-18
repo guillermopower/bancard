@@ -1,7 +1,7 @@
 ﻿using System.Security.Cryptography;
 using System.Text;
 
-namespace Bancard.API.Helper
+namespace Bancard.Core.Helper
 {
     public class CryptoService
     {

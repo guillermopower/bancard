@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Bancard.API.Models
+namespace Bancard.Core.Models
 {
     public abstract class OperationModel
     {

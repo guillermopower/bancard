@@ -1,0 +1,12 @@
+C:\Users\guillermo.rodriguez\source\repos\BancardService\BancardService\bin\Debug\net7.0\Bancard.Core.deps.json
+C:\Users\guillermo.rodriguez\source\repos\BancardService\BancardService\bin\Debug\net7.0\Bancard.Core.dll
+C:\Users\guillermo.rodriguez\source\repos\BancardService\BancardService\bin\Debug\net7.0\Bancard.Core.pdb
+C:\Users\guillermo.rodriguez\source\repos\BancardService\BancardService\obj\Debug\net7.0\Bancard.Core.csproj.AssemblyReference.cache
+C:\Users\guillermo.rodriguez\source\repos\BancardService\BancardService\obj\Debug\net7.0\Bancard.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\guillermo.rodriguez\source\repos\BancardService\BancardService\obj\Debug\net7.0\Bancard.Core.AssemblyInfoInputs.cache
+C:\Users\guillermo.rodriguez\source\repos\BancardService\BancardService\obj\Debug\net7.0\Bancard.Core.AssemblyInfo.cs
+C:\Users\guillermo.rodriguez\source\repos\BancardService\BancardService\obj\Debug\net7.0\Bancard.Core.csproj.CoreCompileInputs.cache
+C:\Users\guillermo.rodriguez\source\repos\BancardService\BancardService\obj\Debug\net7.0\Bancard.Core.dll
+C:\Users\guillermo.rodriguez\source\repos\BancardService\BancardService\obj\Debug\net7.0\refint\Bancard.Core.dll
+C:\Users\guillermo.rodriguez\source\repos\BancardService\BancardService\obj\Debug\net7.0\Bancard.Core.pdb
+C:\Users\guillermo.rodriguez\source\repos\BancardService\BancardService\obj\Debug\net7.0\ref\Bancard.Core.dll

@@ -1,0 +1,7 @@
+{
+  "/api/*":{
+    "target":"https://vpos.infonet.com.py:8888",
+    "secure":true,
+    "loglevel":"debug"
+  }
+}

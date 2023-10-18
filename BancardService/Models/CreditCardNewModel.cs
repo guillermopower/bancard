@@ -1,4 +1,4 @@
-﻿namespace Bancard.API.Models
+﻿namespace Bancard.Core.Models
 {
     public class CreditCardNewModel:OperationModel
     {

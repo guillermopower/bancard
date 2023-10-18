@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>BancardAngular</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://vpos.infonet.com.py:8888/checkout/javascript/dist/bancard-checkout-3.0.0.js"></script> 
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<script type="text/javascript">
+   function BancardCheckoutCreateForm(processid) {
+
+    var styles = {
+      'input-background-color' : '#453454',
+      'input-text-color': '#B22222',
+      'input-border-color' : '#CCCCCC',
+      'input-placeholder-color' : '#999999',
+      'button-background-color' : '#5CB85C',
+      'button-text-color' : '#FFFFFF',
+      'button-border-color' : '#4CAE4C',
+      'form-background-color' : '#999999',
+      'form-border-color' : '#DDDDDD',
+      'header-background-color' : '#F5F5F5',
+      'header-text-color' : '#333333',
+      'hr-border-color' : '#B22222'
+    };
+
+    options = {
+      styles: styles
+    }
+
+    Bancard.Checkout.createForm('iframe-container', processid, options);
+  };
+</script>
+<body>
+  <app-root></app-root>
+</body>
+</html>

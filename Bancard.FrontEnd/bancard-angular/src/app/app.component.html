@@ -1,0 +1,41 @@
+ 
+
+<h1>iFrame vPos</h1>
+<div>
+  <div class="table">
+    <div class="row">
+      <div class="col">
+        <label>Ingrese shop process id</label>
+      </div>
+      <div class="col">
+        <input type="text" id="shop_process_id" name="shop_process_id">
+      </div>
+
+      <div class="col">
+        <label>Ingrese importe</label>
+      </div>
+      <div class="col">
+        <input type="text" id="amount" name="amount">
+      </div>
+      <div class="col">
+        <label>Ingrese importe IVA</label>
+      </div>
+      <div class="col">
+        <input type="text" id="iva_amount" name="iva_amount">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <label id="resultMessage" name="resultMessage"></label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <button (click)="SimpleBuy()" >Pagar</button>
+      </div>
+    </div>
+  </div>
+  
+</div>
+<div style="height: 400px; width: 100%; margin: auto;" id="iframe-container" name="iframe-container" ></div>
+

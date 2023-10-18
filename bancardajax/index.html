@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>BancardAngular</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+
+<body>
+    <h1>iFrame vPos</h1>
+    <div>
+      <div class="table">
+        <div class="row">
+          <div class="col">
+            <label>Ingrese shop process id</label>
+          </div>
+          <div class="col">
+            <input type="text" id="shop_process_id" name="shop_process_id" value="543613">
+          </div>
+    
+          <div class="col">
+            <label>Ingrese importe</label>
+          </div>
+          <div class="col">
+            <input type="text" id="amount" name="amount" value="1000.00">
+          </div>
+          <div class="col">
+            <label>Ingrese importe IVA</label>
+          </div>
+          <div class="col">
+            <input type="text" id="iva_amount" name="iva_amount" value="100.00">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <label id="resultMessage" name="resultMessage"></label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <button onclick="SingleBuy()" >Pagar</button>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    <div style="height: 400px; width: 100%; margin: auto;" id="iframe-container" name="iframe-container" ></div>
+    
+    
+</body>
+</html>
+
+<script>
+    function BancardCheckoutCreateForm(processid) {
+
+var styles = {
+  'input-background-color' : '#453454',
+  'input-text-color': '#B22222',
+  'input-border-color' : '#CCCCCC',
+  'input-placeholder-color' : '#999999',
+  'button-background-color' : '#5CB85C',
+  'button-text-color' : '#FFFFFF',
+  'button-border-color' : '#4CAE4C',
+  'form-background-color' : '#999999',
+  'form-border-color' : '#DDDDDD',
+  'header-background-color' : '#F5F5F5',
+  'header-text-color' : '#333333',
+  'hr-border-color' : '#B22222'
+};
+
+options = {
+  styles: styles
+}
+
+Bancard.Checkout.createForm('iframe-container', processid, options);
+};
+function SingleBuy() {
+   
+    $.ajax({
+        type: "POST",
+        cors:true,
+        crossDomain: true,
+        async: true,
+        headers: {
+              "accept": "application/json",
+              "Access-Control-Allow-Origin":"https://vpos.infonet.com.py:8888",
+              //"Access-Control-Request-Headers": "Content-Type, Authorization, X-Requested-With",
+              "Access-Control-Allow-Headers": "*",
+              "Access-Control-Max-Age": "3600"
+          },
+          xhrFields: {
+        withCredentials: true
+        },
+        url: "https://vpos.infonet.com.py:8888/vpos/api/0.3/single_buy ",
+        data: JSON.stringify({
+            "public_key": "1UFiKuPqgccfTi3XX9iAA6Vt9Oa4dD63",
+            "operation": {
+            "token": "5081702f0516bd6c94524d0871b515f9",
+            "shop_process_id": document.getElementById("shop_process_id").innerText,
+            "currency": "PYG",
+            "amount": document.getElementById("amount").innerText,
+            "iva_amount": document.getElementById("iva_amount").innerText,
+            "additional_data": "0981123456",
+            "description": "Ejemplo de pago",
+            "return_url": "http://127.0.0.1:5500/credit-card-result.html",
+            "cancel_url": "http://127.0.0.1:5500/credit-card-result.html"
+            }
+        }),
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success:
+            function (response) {
+                
+                debugger;
+                if (response.d.length > 0) {
+                    var resJson = jQuery.parseJSON(response.d);
+                    BancardCheckoutCreateForm(resJson.process_id);
+                }
+                        
+            },
+        error:
+            function (response) {
+              
+                alert("Ocurrió error." + response);
+            },
+        failure: function (response) {
+            
+            alert("Ocurrió failure." + response);
+        }
+    });
+ }
+</script>

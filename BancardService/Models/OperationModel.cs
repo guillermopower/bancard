@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Bancard.Core.Models
+﻿namespace Bancard.Core.Models
 {
-    public abstract class OperationModel
+    public class OperationModel
     {
         public string token { get; set; }
+        public int shop_process_id { get; set; }
+
     }
 }

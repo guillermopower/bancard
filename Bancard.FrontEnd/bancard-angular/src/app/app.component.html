@@ -1,4 +1,27 @@
- 
+<h1>Consulta por shop process id</h1>
+<div>
+  <div class="table">
+    <div class="row">
+      <div class="col">
+        <label>Ingrese shop process id a consultar</label>
+      </div>
+      <div class="col">
+        <input type="text" id="shop_process_id_get" name="shop_process_id_get" value="543615">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <label id="resultMessageGet" name="resultMessageGet"></label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <button (click)="CheckSimpleBuy()" >Consultar</button>
+      </div>
+    </div>
+  </div>
+  
+</div> 
 
 <h1>iFrame vPos</h1>
 <div>
@@ -8,20 +31,20 @@
         <label>Ingrese shop process id</label>
       </div>
       <div class="col">
-        <input type="text" id="shop_process_id" name="shop_process_id">
+        <input type="text" id="shop_process_id" name="shop_process_id" value="543615">
       </div>
 
       <div class="col">
         <label>Ingrese importe</label>
       </div>
       <div class="col">
-        <input type="text" id="amount" name="amount">
+        <input type="text" id="amount" name="amount" value="1000.00">
       </div>
       <div class="col">
         <label>Ingrese importe IVA</label>
       </div>
       <div class="col">
-        <input type="text" id="iva_amount" name="iva_amount">
+        <input type="text" id="iva_amount" name="iva_amount" value="100.00">
       </div>
     </div>
     <div class="row">

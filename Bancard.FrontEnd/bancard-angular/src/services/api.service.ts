@@ -1,51 +1,57 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ApiService {
-  private SimpleBuyapiUrl:string='';
-  private Environment = "https://localhost:7114/api/bancard/";
-  private BaseAddress = "singlebuy";
-  private publicKey = "1UFiKuPqgccfTi3XX9iAA6Vt9Oa4dD63";
-  private privateKey = "0gRRUhowsFtSZJnSBdL3F+dvEq1k96mAbR0XppX.";
-  constructor(private http: HttpClient) {
   
-    this.SimpleBuyapiUrl = this.Environment + this.BaseAddress;
-    
+  baseApiURL = "";
+  publicKey = "";
+  privateKey = "";
+  headers = new HttpHeaders;
+  constructor(private http: HttpClient) {
+    this.baseApiURL = environment.baseApiURL;
+    this.publicKey = environment.publicKey;
+    this.privateKey = environment.privateKey;
+    this.headers = new HttpHeaders({ 
+      'Access-Control-Allow-Origin': '*',
+      'Content-Type': 'application/json; charset=UTF-8',
+   });
   }
 
-  async SingleBuy(_shop_process_id:number, _currency:string, _amount:string, _iva_amount:string, _additional_data:string, 
-    _description:string, _return_url:string, _cancel_url:string) {
+  async SingleBuy(_shop_process_id:number, _currency:string, _amount:string, _iva_amount:string, 
+    _description:string, _return_url:string, _cancel_url:string, _additional_data?:string|null) {
     let simpleBuyModel = {
-  shop_process_id: _shop_process_id,
-  currency: _currency,
-  amount: _amount,
-  iva_amount: _iva_amount,
-  additional_data: _additional_data,
-  description: _description,
-  return_url: _return_url,
-  cancel_url: _cancel_url
-};
+      shop_process_id: _shop_process_id,
+      currency: _currency,
+      amount: _amount,
+      iva_amount: _iva_amount,
+      additional_data: '',
+      description: _description,
+      return_url: _return_url,
+      cancel_url: _cancel_url
+    };
               
-    return this.postData(simpleBuyModel, this.SimpleBuyapiUrl);
+    return this.postData(simpleBuyModel, this.baseApiURL + "singlebuy");
   }
 
   async postData(data: any, url:string): Promise<any>  {
-   
-   let _headers = new HttpHeaders({ 
-    'Access-Control-Allow-Origin': '*',
-    'Content-Type': 'application/json; charset=UTF-8',
- });
- 
- let options= { 
-  headers: _headers,
-  
- };
+    let options= { headers: this.headers,};
     return await this.http.post<any[]>(url,data,options).toPromise();
-      
-    
+  }
+
+  public async CheckTransaction(idtransaction:number): Promise<any> {
+    let options= { headers: this.headers};
+    var res = await this.http.get<any[]>(this.baseApiURL +'singlebuygetconfirmations/'+ idtransaction.toString(), options ).toPromise();
+     
+     return res;
+     /*
+   } catch (error) {
+     console.error('Error fetching data from the API:', error);
+     throw error;
+   }
+   */
   }
 }

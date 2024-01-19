@@ -1,5 +1,6 @@
 ﻿using Bancard.Core.Models;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System.Net;
 using System.Net.Http.Headers;
 using System.Net.Http.Json;
@@ -9,7 +10,6 @@ namespace Bancard.Core
 {
     public class BancardService
     {
-        HttpClient client = new HttpClient();
         const string BaseAddress = "vpos/api/0.3/";
         const string Environment = "https://vpos.infonet.com.py:8888/";
         const string publicKey = "1UFiKuPqgccfTi3XX9iAA6Vt9Oa4dD63";
@@ -20,32 +20,42 @@ namespace Bancard.Core
                        
         }
 
-        public async Task<object> SingleBuy(int shop_process_id, string currency, string amount, string iva_amount, string additional_data, string description, string return_url, string cancel_url)
+        public RequestSingleBuyModel Convert(int shop_process_id, string currency, string amount, string iva_amount, string additional_data, string description, string return_url, string cancel_url)
         {
             string strToHash = privateKey + shop_process_id + amount.ToString() + currency;
             string token = Helper.CryptoService.GenerateHashToken(strToHash);
-            
-            var operation = new SingleBuyModel(){shop_process_id= shop_process_id, additional_data = additional_data, amount = amount, currency = currency, 
-                                                 cancel_url = cancel_url ,return_url = return_url, description = description, token = token};
-            
-            var model = new RequestRootModel() { operation = operation, public_key = publicKey };
-            var json = JsonConvert.SerializeObject(model);
-            var rta = await PostAsync("", Environment + BaseAddress, "single_buy", json);
 
-            return rta;
-        }
-        public async Task<string> SingleBuyConfirmation(int shop_process_id)
-        {
-            string strToHash = privateKey + shop_process_id + "get_confirmation";
-            string token = Helper.CryptoService.GenerateHashToken(strToHash);
-
-            var operation = new SingleBuyConfirmationModel()
+            RequestSingleBuyModel model;
+            var operation = new RequestSingleBuyOperationModel()
             {
+
                 shop_process_id = shop_process_id,
+                additional_data = additional_data,
+                amount = amount,
+                currency = currency,
+                cancel_url = cancel_url,
+                return_url = return_url,
+                description = description,
                 token = token
             };
 
-            var model = new RequestRootModel() { operation = operation, public_key = publicKey };
+            model = new RequestSingleBuyModel() { operation = operation, public_key = publicKey };
+
+            return model;
+        }
+
+        public async Task<string> SingleBuy(RequestSingleBuyModel model)
+        {
+            var json = JsonConvert.SerializeObject(model);
+            var rta = await PostAsync("", Environment + BaseAddress, "single_buy", json);
+            return rta;
+        }
+        public async Task<string> SingleBuyGetConfirmation(int shop_process_id)
+        {
+            string strToHash = privateKey + shop_process_id + "get_confirmation";
+            var op = new OperationModel(){ token = Helper.CryptoService.GenerateHashToken(strToHash) };
+            var model = new RequestRootModel() { operation = op, public_key = publicKey};
+                    
             var json = JsonConvert.SerializeObject(model);
             var rta = await PostAsync("", Environment + BaseAddress, "single_buy/confirmations", json);
 

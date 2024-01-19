@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Bancard.DAL\Bancard.DAL.csproj" />
     <ProjectReference Include="..\BancardService\Bancard.Core.csproj" />
   </ItemGroup>
 

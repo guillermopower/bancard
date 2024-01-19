@@ -5,9 +5,11 @@ VisualStudioVersion = 17.7.34202.233
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bancard.Core", "Bancard.Core.csproj", "{BCCF3251-D4F1-4B28-BB2A-212EEF416CFD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bancard.Console", "..\Bancard.Console\Bancard.Console.csproj", "{ED941174-80B7-4E33-86B2-B3F046BC5F77}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bancard.Console", "..\Bancard.Console\Bancard.Console.csproj", "{ED941174-80B7-4E33-86B2-B3F046BC5F77}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bancard.API", "..\Bancard.API\Bancard.API.csproj", "{9B7597E7-6AA4-4896-804F-1ECBA0FD30A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bancard.API", "..\Bancard.API\Bancard.API.csproj", "{9B7597E7-6AA4-4896-804F-1ECBA0FD30A3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bancard.DAL", "..\Bancard.DAL\Bancard.DAL.csproj", "{61B5EAF4-CE98-451E-9AEB-30B407713478}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{9B7597E7-6AA4-4896-804F-1ECBA0FD30A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B7597E7-6AA4-4896-804F-1ECBA0FD30A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B7597E7-6AA4-4896-804F-1ECBA0FD30A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61B5EAF4-CE98-451E-9AEB-30B407713478}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61B5EAF4-CE98-451E-9AEB-30B407713478}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61B5EAF4-CE98-451E-9AEB-30B407713478}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61B5EAF4-CE98-451E-9AEB-30B407713478}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -8,7 +8,8 @@ builder.Services.AddControllers();
 // Add Cors
 builder.Services.AddCors(options =>
          options.AddPolicy("AllowSpecific",
-        builder => builder.WithOrigins("http://localhost:4200", "http://mywebsite.com")
+        //builder => builder.WithOrigins("http://localhost:4200", "http://mywebsite.com")
+        builder => builder.WithOrigins("*")
             .AllowAnyHeader()
             .AllowAnyMethod()));
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
